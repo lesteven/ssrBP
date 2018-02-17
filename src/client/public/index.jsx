@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { hydrate } from 'react-dom';
+import App from './App.jsx';
 
 
-class App extends Component {
 
-    render() {
-        return "Hello world!";
-    }
-}
+hydrate(<App />, document.getElementById('root'))
 
-ReactDOM.render(<App />, document.getElementById('app'));
-
-//hydrate(<App />, document.getElementById('app'))

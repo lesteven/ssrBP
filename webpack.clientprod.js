@@ -7,7 +7,6 @@ var CompressionPlugin = require("compression-webpack-plugin");
 module.exports = merge(common, {
     devtool: 'source-map',
     plugins: [
-        new HtmlWebpackPlugin(),
         new webpack.DefinePlugin({
               'process.env.NODE_ENV': '"production"'
             }),
