@@ -1,28 +1,14 @@
 var webpack = require('webpack'); 
 var path = require('path');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/client/public/index.jsx'
+        client: './src/client/public/index.jsx'
     },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
-    },
-    devtool: 'source-map',
-    devServer: {
-        publicPath: '/',
-        contentBase: './src/client/public',
-        inline: true,
-        port: 8080, 
-        proxy: {
-            '**': {
-                target: 'http://localhost:3000',
-                changeOrigin: true,
-                secure:false
-            }
-        }
     },
     module: {
         rules: [
@@ -48,6 +34,6 @@ module.exports = {
         ]
     },
     plugins: [
-
+//        new HtmlWebpackPlugin()
     ]
 };

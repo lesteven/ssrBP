@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import { hydrate } from 'react-dom';
 
 
-class Index extends Component {
+class App extends Component {
 
     render() {
         return "Hello world!";
     }
 }
 
-ReactDOM.render(<Index />, document.getElementById('index'));
+ReactDOM.render(<App />, document.getElementById('app'));
+
+//hydrate(<App />, document.getElementById('app'))
