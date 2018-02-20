@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+import { update } from '../../common/reduxModules/viewModule';
 
 
 class App extends Component {
@@ -9,11 +10,10 @@ class App extends Component {
 
     }
     render() {
-        this.hello();
-    console.log(this.props);
         return (
             <div>
-                <button onClick = {this.hello}>Click</button>
+                <button onClick = {this.props.addOne}>Click</button>
+            <p>{this.props.view.count}</p>
             "Hello Universal React!"
             </div>
         )
@@ -25,6 +25,11 @@ const mapStateToProps = (state) => {
         view:state.view
     }
 }
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addOne:() => dispatch(update())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 

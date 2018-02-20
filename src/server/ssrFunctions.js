@@ -5,22 +5,25 @@ import App from '../client/public/App.jsx';
 import configureStore, {reducers} from '../common/configureStore.js';
 
 
-function getData() {
-    console.log('starting');
-}
 function handleRender(req,res)  {
    // getData(data => {
-    const preloadedState = reducers;
-    const store = configureStore(preloadedState);
 
+    // create store
+//    const preloadedState = reducers;
+    //const store = configureStore(preloadedState);
+    const store = configureStore();
+
+    // render component to string
     const html = renderToString(
         <Provider store = {store}>
             <App />
         </Provider>
     )
-
+    
+    // get redux state
     const finalState = store.getState();
 
+    // send to client
     res.send(renderFullPage(html, finalState));
     //})
 }
@@ -37,7 +40,7 @@ function renderFullPage(html, preloadedState) {
             </head>
             <body>
                 <div id="root">${html}</div>
-                <script src="/client.bundle.js" type="text/jsx"></script>
+                <script src="/client.bundle.js"></script>
             </body>
         </html>
     `
@@ -49,8 +52,8 @@ function renderFullPage(html, preloadedState) {
                 window.__PRELOADED_STATE__ = 
                     ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
                 </script>
-*/
 
+*/
 export { handleRender, renderFullPage };
 
 
