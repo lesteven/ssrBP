@@ -8,13 +8,13 @@ app.use(morgan('dev'));
 const port = process.env.PORT || 3000;
 
 
-// react server side
-import { handleRender } from './ssrFunctions.js';
-
 // routers
 app.get('/hello', function(req,res) {
     res.send("hello server!");
 })
+
+// react server side
+import { handleRender } from './ssrFunctions.js';
 
 
 app.use(handleRender);

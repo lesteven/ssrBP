@@ -1,16 +1,28 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-
+import { Provider } from 'react-redux';
 import App from '../client/public/App.jsx';
+import configureStore, {reducers} from '../common/configureStore.js';
 
-//let ssr = {};
 
+function getData() {
+    console.log('starting');
+}
 function handleRender(req,res)  {
+   // getData(data => {
+    const preloadedState = reducers;
+    const store = configureStore(preloadedState);
+
     const html = renderToString(
-        <App />
+        <Provider store = {store}>
+            <App />
+        </Provider>
     )
-    const preloadedState = null;
-    res.send(renderFullPage(html, preloadedState));
+
+    const finalState = store.getState();
+
+    res.send(renderFullPage(html, finalState));
+    //})
 }
 
 function renderFullPage(html, preloadedState) {
@@ -32,9 +44,13 @@ function renderFullPage(html, preloadedState) {
 }
 
 /*
-                window._PRELOADED_STATE__ = 
+
+                <script>
+                window.__PRELOADED_STATE__ = 
                     ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+                </script>
 */
+
 export { handleRender, renderFullPage };
 
 
