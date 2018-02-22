@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { update } from '../../common/reduxModules/viewModule';
+import { update } from '../common/reduxModules/viewModule';
 
 
 class App extends Component {

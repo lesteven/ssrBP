@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = merge(common, {
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
 
     plugins: [
         new webpack.DefinePlugin({

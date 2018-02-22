@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import App from '../client/public/App.jsx';
+import App from '../client/App.jsx';
 import configureStore, {reducers} from '../common/configureStore.js';
 
 
@@ -47,15 +47,9 @@ function renderFullPage(html, preloadedState) {
         </html>
     `
 }
-// <script src="client.bundle.js" ></script>
-/*
 
-                <script>
-                window.__PRELOADED_STATE__ = 
-                    ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-                </script>
 
-*/
+
 export { handleRender, renderFullPage };
 
 

@@ -15,7 +15,7 @@ app.get('*.js', function (req, res, next) {
   next();
 });
 
-
+// serve js files
 app.use(express.static('dist'));
 
 // routers
