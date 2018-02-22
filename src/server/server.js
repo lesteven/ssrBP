@@ -7,17 +7,16 @@ const app = express();
 app.use(morgan('dev'));
 const port = process.env.PORT || 3000;
 
-/*
+// get gzip files
 app.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz';
   res.set('Content-Encoding', 'gzip');
   res.set('Content-Type', 'text/javascript');
   next();
 });
-*/
 
-app.use(express.static(path.resolve(__dirname ,'../../dist')));
 
+app.use(express.static('dist'));
 
 // routers
 app.get('/hello', function(req,res) {

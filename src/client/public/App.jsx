@@ -10,6 +10,7 @@ class App extends Component {
 
     }
     render() {
+    this.hello();
         return (
             <div>
                 <button onClick = {this.props.addOne}>Click</button>
