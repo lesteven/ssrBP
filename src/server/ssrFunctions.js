@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import App from '../client/App.jsx';
+import App from '../common/App.jsx';
 import configureStore, {reducers} from '../common/configureStore.js';
 
 
@@ -26,6 +26,7 @@ function handleRender(req,res)  {
     //})
 }
 
+// create html and inject redux data into it
 function renderFullPage(html, preloadedState) {
     return `
         <!DOCTYPE html>
