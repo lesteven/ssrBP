@@ -3,6 +3,8 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import App from '../common/App.jsx';
 import configureStore, {reducers} from '../common/configureStore.js';
+import { StaticRouter as Router, matchPath } from 'react-router';
+import routeOptions from '../common/routes.js';
 
 
 function handleRender(req,res)  {
@@ -11,10 +13,25 @@ function handleRender(req,res)  {
     // create store
     const store = configureStore();
 
+    // react router setup
+    let foundPath = null;
+
+    let { path, component } = routeOptions.routes.find (
+        ({ path, exact }) => {
+            foundPath = matchPath(req.url, { path, exact, strict: false })
+            return foundPath;
+        }) || {};
+
+
+    let context = {};
+
+
     // render component to string
     const html = renderToString(
         <Provider store = {store}>
-            <App />
+            <Router context = {context} location = {req.url}>
+                <App />
+            </Router>
         </Provider>
     )
     

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { update } from './reduxModules/viewModule';
+import NavBar from './views/navBar/NavBar.jsx';
 
 
 class App extends Component {
@@ -12,11 +13,7 @@ class App extends Component {
     render() {
     this.hello();
         return (
-            <div>
-                <button onClick = {this.props.addOne}>Click</button>
-            <p>{this.props.view.count}</p>
-            "Hello Universal React!"
-            </div>
+            <NavBar />
         )
     }
 }
