@@ -16,6 +16,9 @@ function handleRender(req,res)  {
     // react router setup
     let foundPath = null;
 
+    console.log(req.url);
+
+    // grab path that matches with req.url along with component    
     let { path, component } = routeOptions.routes.find (
         ({ path, exact }) => {
             foundPath = matchPath(req.url, { path, exact, strict: false })
@@ -25,7 +28,7 @@ function handleRender(req,res)  {
 
     let context = {};
 
-
+    console.log(context); 
     // render component to string
     const html = renderToString(
         <Provider store = {store}>
@@ -35,6 +38,7 @@ function handleRender(req,res)  {
         </Provider>
     )
     
+    console.log(context); 
     // get redux state
     const finalState = store.getState();
 
@@ -42,6 +46,7 @@ function handleRender(req,res)  {
     res.send(renderFullPage(html, finalState));
     //})
 }
+
 
 // create html and inject redux data into it
 function renderFullPage(html, preloadedState) {

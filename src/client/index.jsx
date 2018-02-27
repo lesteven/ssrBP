@@ -3,7 +3,7 @@ import { hydrate } from 'react-dom';
 import App from '../common/App.jsx';
 import { Provider } from 'react-redux';
 import configureStore from '../common/configureStore.js';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -20,9 +20,9 @@ const store = configureStore(preloadedState);
 
 hydrate(
     <Provider store = {store}>    
-        <Router>
+        <BrowserRouter>
             <App />
-        </Router>
+        </BrowserRouter>
     </Provider>, 
     document.getElementById('root')
 )

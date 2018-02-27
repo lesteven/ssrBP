@@ -30,7 +30,6 @@ import { handleRender } from './ssrFunctions.js';
 app.use(handleRender);
 
 
-
 app.listen(port,function(){
 	console.log(`Listening on port ${port}`)
 })

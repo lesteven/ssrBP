@@ -1,8 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { update } from './reduxModules/viewModule';
 import NavBar from './views/navBar/NavBar.jsx';
+import routesOptions from './routes.js';
+import { Route, Link, Switch, withRouter } from 'react-router-dom';
+
 
 
 class App extends Component {
@@ -11,9 +14,17 @@ class App extends Component {
 
     }
     render() {
-    this.hello();
+        const reactRoutes = routesOptions.routes.map (e =>
+            <Route exact = { e.exact } path = { e.path } 
+                component = { e.component } key = { e.path} />
+        )
         return (
-            <NavBar />
+            <Fragment>
+                <NavBar />
+                <Switch>
+                    { reactRoutes }
+                </Switch>
+            </Fragment>
         )
     }
 }
@@ -28,6 +39,8 @@ const mapDispatchToProps = (dispatch) => {
         addOne:() => dispatch(update())
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+// use withRouter to pass location to App
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 
 
