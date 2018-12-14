@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../../fonts/Merriweather-Regular.ttf');
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: #fdfdfd;
+  color: #2b2b2b;
+}
+.max-width {
+  margin: auto;
+  max-width: 960px;
+}
+.max-width-two {
+  margin: auto;
+  max-width: 1024px;
+}
+.top-pad {
+  padding-top: 8%;
+}
+.page-wrapper {
+  padding: 5%;
+}
+.bottom {
+  height: 200px;
+}
+
+/* DESKTOP VIEW */
+
+@media only screen and (min-width:500px) {
+}
+
+/* MOBILE VIEW */
+
+@media only screen and (max-width:500px) {
+}

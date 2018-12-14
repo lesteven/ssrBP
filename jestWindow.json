@@ -1,0 +1,11 @@
+{
+  "testEnvironment": "jsdom",
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/src/server/",
+    "<rootDir/tests/"
+  ],
+  "collectCoverageFrom": [
+    "src/common/**/*.{js,jsx}",
+    "src/client/**/*.{js,jsx}"
+  ]
+}
