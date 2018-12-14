@@ -1,0 +1,10 @@
+{
+  "testEnvironment": "node",
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/src/common/",
+    "<rootDir>/src/client/"
+    ],
+  "collectCoverageFrom": [
+    "src/server/**/*.{js,jsx}"
+  ]
+}
