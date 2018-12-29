@@ -1,5 +1,5 @@
 {
-  "name": "instagram-clone",
+  "name": "ssr-bp",
   "version": "1.0.0",
   "main": "./src/server/server.js",
   "scripts": {
