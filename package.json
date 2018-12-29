@@ -5,8 +5,7 @@
   "scripts": {
     "client": "webpack-dev-server --config ./webpacks/clientDev.js",
     "server": "DEBUG=http nodemon src/server/server --exec babel-node",
-    "build-serv": " webpack --config ./webpacks/serverProd.js",
-    "build-client": " webpack --config ./webpacks/clientProd.js",
+    "build": " webpack --config ./webpacks/serverProd.js && webpack --config ./webpacks/clientProd.js",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test": "jest src --watch",
