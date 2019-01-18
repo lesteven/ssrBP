@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import style from './css/home.css';
 
 class HomePage extends Component {
