@@ -7,4 +7,4 @@ jobs:
      - checkout
      - run: npm install
      - run: npm test
-     - run: npm lint
+     - run: npm run lint
