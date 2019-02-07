@@ -5,7 +5,6 @@ import ContactPage from './views/contact/ContactPage';
 
 const prefix = '';
 const exactTrue = true;
-const exactFalse = false;
 
 const homeURL = '/';
 const homeTitle = 'Home';

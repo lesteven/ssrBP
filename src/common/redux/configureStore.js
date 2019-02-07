@@ -3,11 +3,9 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import { view } from './viewModule/viewModule';
-import { slide } from './slideModule/slideModule';
 
 export const reducers = combineReducers({
   view,
-  slide,
 });
 
 

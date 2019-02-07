@@ -2,10 +2,12 @@ version: 2.0
 jobs:
  build:
    docker:
-     - image: alpine:3.7
+     - image: circleci/node:[TAG]
    steps:
+     - checkout
      - run:
-         name: The First Step
+         name: test
          command: |
-           echo 'Hello World!'
-           echo 'This is the delivery pipeline'
+           npm install
+           npm test
+           npm lint
