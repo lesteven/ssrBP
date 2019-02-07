@@ -1,9 +1,8 @@
 version: 2.0
 jobs:
  build:
-   working_directory: ~/ssrBP
    docker:
-     - image: circleci/node:10.15.1
+     - image: circleci/node:10
    steps:
      - checkout
      - run: npm install
