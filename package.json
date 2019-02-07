@@ -8,7 +8,8 @@
     "build": " webpack --config ./webpacks/serverProd.js && webpack --config ./webpacks/clientProd.js",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "test": "jest src --watch",
+    "test-watch": "jest src --watch",
+    "test": "jest src",
     "int-test": "jest -c jestNode.json tests/**.int.test.js --watch",
     "cov-server": "jest -c jestNode.json --coverage",
     "cov-client": "jest -c jestWindow.json --coverage"
