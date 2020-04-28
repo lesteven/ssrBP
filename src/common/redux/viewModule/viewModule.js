@@ -10,7 +10,7 @@ const toggleNav = 'view/TOGGLE_NAV';
 const toggleDashSide = 'view/TOGGLE_DASH_NAV';
 
 // action creator
-export const updateScreenSize = size => ({
+export const updateScreenSize = (size) => ({
   type: updateView,
   screenSize: size,
 });

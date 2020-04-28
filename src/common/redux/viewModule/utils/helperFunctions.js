@@ -1,9 +1,9 @@
 // css state based on screen width
 const maxSize = 812;
 
-const showFlex = size => (size < maxSize ? 'none' : 'flex');
+const showFlex = (size) => (size < maxSize ? 'none' : 'flex');
 
-const showBlock = size => (size < maxSize ? 'none' : 'block');
+const showBlock = (size) => (size < maxSize ? 'none' : 'block');
 
 /* toggle display
 * if display is less than maxsize and
